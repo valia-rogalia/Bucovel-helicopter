@@ -1,0 +1,5 @@
+ProjectTitle: Gulp starter
+
+PageList:
+- file: home
+  name: 'Главная'

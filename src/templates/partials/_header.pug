@@ -1,0 +1,25 @@
+header
+  div.header
+    div.header__right-part
+      img.header__logo(src="/icons/point_logo.svg")
+      ul.header__langs
+        li.header__langs-item.header__langs-item_active Ru
+        li.header__langs-item En
+      ul.header__menu
+        -var menu_items = ['Вертолеты и цены','Галарея','О нас','Правила','Контакты']
+        each menu_item in menu_items
+          li.header__menu-item
+            a.header__menu-link(href="")=menu_item
+            
+    div.header__contacts
+      div.header__contacts-top
+        span.header__socials-text Online now
+        span.header__socials.header__socials_viber Viber
+        span.header__socials.header__socials_whatsapp Whatsapp
+      a.header__contacts-center(href="tel:+380671234567") +38 (067)
+        b 12-34-567
+      br
+      a.header__contacts-bottom(href="") Вам перезвонить?
+        
+        
+      

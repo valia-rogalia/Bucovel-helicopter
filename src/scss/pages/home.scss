@@ -1,0 +1,314 @@
+@include font-face('Montserrat', 'Montserrat-Bold', 700);
+@include font-face('Montserrat', 'Montserrat-SemiBold', 600);
+@include font-face('Montserrat', 'Montserrat-Regular', 400);
+@include font-face('Montserrat', 'Montserrat-ExtraLight', 100);
+
+@include font-face('BebasNeue', 'BebasNeue-Bold', 700);
+@include font-face('BebasNeue', 'BebasNeue-Regular', 400);
+@include font-face('BebasNeue', 'BebasNeue-Book', 300);
+
+$cyan: #00ffad;
+
+body {
+  color: #ffffff;
+}
+
+header {
+  width: 100%;
+  padding-top: 25px;
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1180px;
+    margin: 0px auto;
+    &__right-part {
+      display: flex;
+      align-items: center;
+    }
+    &__logo {
+      width: 80px;
+      margin-right: 20px;
+    }
+    &__langs {
+      padding: 0;
+      display: flex;
+      margin: 0;
+      margin-right: 57px;
+      opacity: 0.9;
+      &-item {
+        font-family: "Montserrat";
+        font-weight: 600;
+        margin-right: 20px;
+        font-size: 10px;
+        opacity: 0.9;
+        line-height: 13px;
+        text-transform: uppercase;
+        &:last-of-type {
+          margin-right: 0;
+        }
+        &_active {
+          color: $cyan;
+        }
+      }
+    }
+    &__menu {
+      padding: 0;
+      display: flex;
+      margin: 0;
+      height: 16px;
+      &-item {
+        margin-right: 50px;
+        position: relative;
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+      &-link {
+        font-family: "Montserrat";
+        font-weight: 700;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: white;
+        text-decoration: none;
+        line-height: 16px;
+        &:hover {
+          color: $cyan;
+          &:after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 35px;
+            background-color: $cyan;
+            position: absolute;
+            top: -17px;
+            left: 50%;
+            transform: translate(-50%,-100%);
+          }
+        }
+      }
+    }
+    &__contacts {
+      text-align: right;
+      &-top {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-bottom: 9px;
+      }
+    }
+    &__socials-text,
+    &__socials {
+      display: block;
+      margin-right: 10px;
+      font-family: "Montserrat";
+      font-weight: 400px;
+      &:last-of-type {
+        margin-right: 0
+      }
+    }
+    &__socials-text {
+      opacity: 0.5;
+      font-size: 8px;
+      line-height: 11px;
+      text-transform: uppercase;
+    }
+    &__socials {
+      padding-left: 12px;
+      font-size: 12px;
+      line-height: 16px;
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 7px;
+        height: 7px;
+        border-radius: 7px;
+        left: 0px;
+        top: 50%;
+        transform: translate(0,-50%);
+      }
+      &_viber:before {
+        box-shadow: 0 2px 4px rgba(102, 92, 172, 0.5);
+        background-color: #665cac;
+      }
+      &_whatsapp:before {
+        box-shadow: 0 2px 4px rgba(44, 183, 66, 0.5);
+        background-color: #2cb742;
+      }
+    }
+    &__contacts-center {
+      font-family: "Montserrat";
+      font-size: 18px;
+      line-height: 23px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #ffffff;
+      margin-bottom: 4px;
+      b {
+        font-weight: 700;
+      }
+    }
+    &__contacts-bottom {
+      font-family: "Montserrat";
+      color: $cyan;
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+}
+
+.background-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: url("/img/background.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.content {
+  width: 980px;
+  margin: 0px auto;
+  padding-top: 75px;
+  position: relative;
+  &__text-wrapper {
+    transition: all 0.1s ease;
+    transform: translate(0,0);
+  }
+}
+.weather {
+  font-family: "BebasNeue";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  letter-spacing: 3px;
+  opacity: 0.7;
+  padding-left: 2px;
+  &__degrees {
+    font-family: "BebasNeue";
+    font-weight: 300;
+    display: block;
+    padding-left: 33px;
+    position: relative;
+    margin-left: 10px;
+    font-size: 26px;
+    line-height: 29px;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      display: block;
+      width: 23px;
+      height: 23px;
+      background: url("/icons/weather.png") center no-repeat;
+      background-size: contain;
+      transform: translate(0,-50%);
+    }
+  }
+}
+.main-text {
+  margin-bottom: 42px;
+  font-family: "BebasNeue";
+  font-weight: 700;
+  &__header {
+    font-size: 140px;
+    line-height: 140px;
+    opacity: 0.9;
+    text-transform: uppercase;
+    margin: 0;
+    z-index: 2;
+    position: relative;
+  }
+  &__description {
+    margin-top: -20px;
+    margin-bottom: 0;
+    span {
+      font-size: 90px;
+      line-height: 91px;
+      opacity: 0.8;
+      position: relative;
+      z-index: 1;
+      &:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translate(15%,15%);
+        z-index: 2;
+        display: block;
+        width: 100px;
+        height: 100px;
+        background-image: radial-gradient(circle 50px at 100% 100%, #000000 0%, rgba(0, 0, 0, 0) 100%);
+        opacity: 0.78;
+      }
+    }
+  }
+}
+.text {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+  display: block;
+  padding-left: 3px;
+  b {
+    font-weight: 700;
+  }
+  margin-bottom: 60px;
+}
+.main-button {
+  font-family: "BebasNeue";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  color: $cyan;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  letter-spacing: 3px;
+  &__animate-wrapper {
+    position: relative;
+    z-index: 2;
+    margin-right: 10px;
+    height: 23px;
+    &:before {
+      content: "";
+      position: absolute;
+      left: calc(50% - 5px);
+      top: 50%;
+      transform: translate(-50%,-50%);
+      display: block;
+      width: 80px;
+      height: 80px;
+      border-radius: 80px;
+      border: 1px solid white;
+      z-index: 1;
+      animation: fadeOut-circles 1.5s ease-out infinite;
+    }
+  }
+  &__img {
+    width: 20px;
+  }
+}
+.main-image {
+  position: absolute;
+  display: block;
+  width: 620px;
+  height: 433px;
+  top: -75px;
+  right: 0;
+  z-index: 2;
+  transform: translate(0,0);
+  transition: all 0.1s ease;
+}

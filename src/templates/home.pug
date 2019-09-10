@@ -1,0 +1,30 @@
+extends layouts/_layout
+block variables
+	- var title = 'Главная страница'
+	- var pageClass = ''
+
+
+block content
+	div.background-image
+	
+	div.content
+		div.content__text-wrapper
+			img.main-image(src="/img/helicopter.png" alt="Helicopter")
+			div.weather Погода в Буковеле
+				span.weather__degrees 4˚c
+			div.main-text 
+				h1.main-text__header В Буковель
+				h2.main-text__description 
+					span На вертолете
+			span.text Дорожишь своим временем и любишь 
+				br
+				| кататься на лыжах? Заказывай быстрый
+				br
+				| перелет и будешь в
+				b Буковеле всего
+					br 
+					| через 3 часа.  		
+		button.main-button
+			div.main-button__animate-wrapper
+				img.main-button__img(src="/icons/arrow.svg" alt="Look")
+			| Смотреть

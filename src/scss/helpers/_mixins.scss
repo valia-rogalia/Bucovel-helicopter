@@ -1,0 +1,129 @@
+// @font-face mixin
+@mixin font-face($alias, $name, $weight) {
+    @font-face {
+        font-family: $alias;
+        src: url("../fonts/" + $name + ".woff2") format("woff2"), url("../fonts/" + $name + ".woff") format("woff");
+        font-weight: $weight;
+        font-style: normal;
+        font-display: swap;
+    }
+}
+// to use:
+// @include font-face(black, cytiapro-black-webfont)
+
+
+// width
+@mixin r($width) {
+    @media only screen and (max-width: $width+ "px") {
+        @content;
+    }
+}
+
+@mixin rmin($width) {
+    @media only screen and (min-width: $width+ "px") {
+        @content;
+    }
+}
+
+
+// height
+@mixin rh($height) {
+    @media only screen and (max-height: $height + "px") {
+        @content;
+    }
+}
+
+@mixin rhmin($height) {
+    @media only screen and (min-height: $height + "px") {
+        @content;
+    }
+}
+
+
+@mixin image($image) {
+    background-image: url($image);
+}
+
+@mixin trans($what: all, $dur: 0.2s, $easing: ease) {
+    transition: $what $dur $easing;
+}
+
+@mixin smooth-font() {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin gpu {
+    transform: translate3d(0,0,0);
+}
+
+@mixin lg {
+    @include r(1199) {
+        @content;
+    }
+}
+
+@mixin md {
+    @include r(991) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @include r(767) {
+        @content;
+    }
+}
+
+@mixin xs {
+    @include r(575) {
+        @content;
+    }
+}
+
+
+@mixin text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+@mixin hover {
+    .no-touch &:hover {
+        @content;
+    }
+}
+
+
+// retina, also available as +hdpi
+@mixin retina {
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+        @content;
+    }
+}
+
+
+@mixin counter($var, $sep) {
+    counter-reset: list + $var;
+    & > li {
+        &:before {
+            content: counter(list + $var) $sep;
+            counter-increment: list + $var;
+        }
+    }
+}
+
+
+// Position absolute
+@mixin absolute() {
+    content: '';
+    position: absolute;
+    @content;
+}
+
+// Width & height
+//@mixin size($width, $height) {
+//	width: $width;
+//	height: $height;
+//}
